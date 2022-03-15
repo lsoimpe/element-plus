@@ -30,7 +30,7 @@ export const useHandlers = (
   const uploadFiles = ref<UploadFiles>([])
 
   const getFile = (rawFile: UploadRawFile) =>
-    uploadFiles.value.find((file) => file.uid === rawFile.uid)
+    uploadFiles.value.find((file) => file.raw.uid === rawFile.uid)
 
   function abort(file: UploadFile) {
     uploadRef.value?.abort(file)
